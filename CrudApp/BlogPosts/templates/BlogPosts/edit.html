@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block content %}
+<br><br><br>
+<center>
+
+<form action="/update/{{blogs.id}}" method = "POST" >
+{% csrf_token %}
+
+  <labe>Blog Title: </label><br>
+  <input type="text" name="blog_title" value="{{ blogs.blog_title }}"><br><br>
+
+  <label for="lname">Blog: </label><br>
+  <textarea rows="4" cols="50" name="blog"  value=""> {{ blogs.blog }}</textarea><br><br>
+  
+  <label>Author: {{ blogs.blog_author }} </label><br>
+  <label>Created on: {{ blogs.blog_date }} </label><br><br><br>
+
+  
+  <input type="submit" value="Submit">
+
+</form> 
+</center>
+
+{% endblock %}
